@@ -8,16 +8,11 @@ public class Main {
         double temperatureCelsius = 25;
         BaseConverter converter = new BaseConverter();
 
-        CelsiusKelvin celsiusKelvin = new CelsiusKelvin();
         System.out.println();
-        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, celsiusKelvin));
-
-        CelsiusReaumur celsiusReaumur = new CelsiusReaumur();
-        System.out.println();
-        System.out.println("Celsius to Reaumur: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, celsiusReaumur));
-
-        CelsiusFahrenheit celsiusFahrenheit = new CelsiusFahrenheit();
-        System.out.println();
-        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, celsiusFahrenheit));
+        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, new CelsiusKelvin()));
+// мог бы "Celsius to Fahrenheit: " + temperatureCelsius + " --> " " запихнуть параметром в метод BaseConverter.convert, но
+// не захотел усложнять код
+        System.out.println("Celsius to Reaumur: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, new CelsiusReaumur()));
+        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, new CelsiusFahrenheit()));
     }
 }
