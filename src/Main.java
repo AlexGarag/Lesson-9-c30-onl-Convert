@@ -2,24 +2,22 @@ import by.tms.lesson9c30onl.convert.BaseConverter;
 import by.tms.lesson9c30onl.convert.temperatureconverter.CelsiusFahrenheit;
 import by.tms.lesson9c30onl.convert.temperatureconverter.CelsiusKelvin;
 import by.tms.lesson9c30onl.convert.temperatureconverter.CelsiusReaumur;
-import by.tms.lesson9c30onl.convert.temperatureconverter.FahrenheitCelsius;
 
 public class Main {
     public static void main(String[] args) {
         double temperatureCelsius = 25;
-        BaseConverter celsiusFahrenheit = new CelsiusFahrenheit();
-        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + celsiusFahrenheit.convert(temperatureCelsius));
+        BaseConverter converter = new BaseConverter();
 
-        double temperatureFahrenheit = 77;
-        BaseConverter fahrenheitCelsius = new FahrenheitCelsius();
-        System.out.println("Fahrenheit to Celsius: " + temperatureFahrenheit + " --> " + fahrenheitCelsius.convert(temperatureFahrenheit));
+        CelsiusKelvin celsiusKelvin = new CelsiusKelvin();
+        System.out.println();
+        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, celsiusKelvin));
 
-        temperatureCelsius = 12;
-        BaseConverter celsiusReaumur = new CelsiusReaumur();
-        System.out.println("Celsius to Reaumur: " + temperatureCelsius + " --> " + celsiusReaumur.convert(temperatureCelsius));
+        CelsiusReaumur celsiusReaumur = new CelsiusReaumur();
+        System.out.println();
+        System.out.println("Celsius to Reaumur: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, celsiusReaumur));
 
-        temperatureCelsius = 0;
-        BaseConverter celsiusKelvin = new CelsiusKelvin();
-        System.out.println("Celsius to Kelvin: " + temperatureCelsius + " --> " + celsiusKelvin.convert(temperatureCelsius));
+        CelsiusFahrenheit celsiusFahrenheit = new CelsiusFahrenheit();
+        System.out.println();
+        System.out.println("Celsius to Fahrenheit: " + temperatureCelsius + " --> " + converter.convert(temperatureCelsius, celsiusFahrenheit));
     }
 }
